@@ -29,7 +29,11 @@ export default function NewTask(props) {
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder="Title" required />
           <input type="text" placeholder="Link" />
-          <input type="datetime-local" min={new Date().toISOString()} />
+          <input
+            type="date"
+            placeholder="Due Date"
+            min={new Date().toISOString().split("T")[0]}
+          />
           <button>Add</button>
         </form>
       </main>
